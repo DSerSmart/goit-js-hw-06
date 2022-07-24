@@ -8,10 +8,12 @@ const ingredients = [
 ];
 
 const ulEl = document.querySelector("#ingredients");
-ingredients.forEach((ingredient) => {
+
+const elements = ingredients.map((option) => {
   const liEl = document.createElement("li");
   liEl.classList.add("item");
-  liEl.textContent = ingredient;
-  console.log(liEl);
-  ulEl.appendChild(liEl);
+  liEl.textContent = option;
+  return liEl;
 });
+console.log(elements);
+ulEl.append(...elements);
